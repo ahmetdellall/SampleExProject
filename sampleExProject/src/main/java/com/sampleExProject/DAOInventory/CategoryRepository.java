@@ -1,0 +1,5 @@
+package com.sampleExProject.DAOInventory;
+
+public interface CategoryRepository {
+
+}
