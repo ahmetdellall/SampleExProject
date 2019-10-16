@@ -1,10 +1,10 @@
-package com.sampleExProject.DAOInventory;
+package com.sampleExProject.InventoryService;
 
 import java.util.List;
 
 import com.sampleExProject.DomainInventoryData.Film;
 
-public interface FilmRepository {
+public interface FilmService {
 
 	List<Film> findAllByFilms();
 
@@ -17,5 +17,4 @@ public interface FilmRepository {
 	List<Film> findRequestLanguageById(int id);
 
 	List<Film> requestLenghtAndLanguageGetFilm(int lenght, int id);
-
 }

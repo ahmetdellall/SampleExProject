@@ -14,7 +14,7 @@ public interface CustomerRepository {
 
 	List<Customer> findByStretId(int id);
 
-	Customer findByStoreAndStreed(int streedId, String storeName);
+	List<Customer> findByStoreAndStreed(int streedId, String customerName);
 
 	void crete(Customer customer);
 

@@ -15,7 +15,7 @@ public interface SampleExProjectService {
 
 	List<Customer> findByStretId(int id) throws CustomerNotFoundException;
 
-	Customer findByStoreAndStreed(int streedId, String storeName) throws CustomerNotFoundException;
+	List<Customer> findByStoreAndStreed(int streedId, String storeName) throws CustomerNotFoundException;
 
 	void crete(Customer customer);
 

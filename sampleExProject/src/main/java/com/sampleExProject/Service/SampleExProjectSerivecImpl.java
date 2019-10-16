@@ -46,8 +46,8 @@ public class SampleExProjectSerivecImpl implements SampleExProjectService {
 	}
 
 	@Override
-	public Customer findByStoreAndStreed(int streedId, String storeName) throws CustomerNotFoundException {
-		Customer customer =customerRepository.findByStoreAndStreed(streedId, storeName);
+	public List<Customer> findByStoreAndStreed(int streedId, String storeName) throws CustomerNotFoundException {
+		List<Customer> customer =customerRepository.findByStoreAndStreed(streedId, storeName);
 		if(customer ==null) throw new CustomerNotFoundException("Customer Not Found");
 		return customerRepository.findByStoreAndStreed(streedId, storeName);
 	}

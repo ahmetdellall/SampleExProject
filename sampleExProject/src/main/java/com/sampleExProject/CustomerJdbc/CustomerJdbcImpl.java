@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.swing.text.DefaultEditorKit.CutAction;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -53,30 +55,29 @@ public class CustomerJdbcImpl implements CustomerRepository{
 
 	@Override
 	public Customer findById(int id) {
-		String sql ="select * from customer where address_id=?";
+		String sql ="select * from customer where customer_id=?";
 		Customer customer =DataAccessUtils.singleResult(jdbcTemplate.query(sql, rowMapper, id));
-		if (customer == null) {
-			System.out.println("id :"+id +"customer not found");
-		}
 		return customer;
 	}
 
 	@Override
 	public List<Customer> findByStretId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql ="select * from customer where address_id=?";
+		List<Customer> customer =jdbcTemplate.query(sql, rowMapper,id);
+		return customer;
 	}
 
 	@Override
-	public Customer findByStoreAndStreed(int streedId, String storeName) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Customer> findByStoreAndStreed(int streedId, String firstName) {
+		String sql ="select * from customer inner join store on (customer.address_id = store.address_id) where customer.first_name like ?";
+		return jdbcTemplate.query(sql, rowMapper,streedId,"%"+firstName+"%");
 	}
 
 	@Override
 	public void crete(Customer customer) {
-		// TODO Auto-generated method stub
+		String sql="insert into customer(address_id,active,customer_id,customer_id,create_date,email,first_name,last_name,last_update,store_id) values (?,?,?,?,?,?,?,?,?)";
 		
+		jdbcTemplate.update(sql, customer);
 	}
 
 	@Override
