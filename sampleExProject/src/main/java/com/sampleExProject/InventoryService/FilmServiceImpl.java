@@ -13,13 +13,12 @@ import com.sampleExProject.DomainInventoryData.Film;
 
 @Service
 @Transactional
-public class FilmServiceInventory implements FilmService {
+public class FilmServiceImpl implements FilmService {
 
-
+	
 	private FilmRepository filmRepository;
 	
 	
-	@Autowired
 	public void setFilmRepository(FilmRepository filmRepository) {
 		this.filmRepository = filmRepository;
 	}

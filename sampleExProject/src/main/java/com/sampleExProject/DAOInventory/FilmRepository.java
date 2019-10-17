@@ -2,6 +2,8 @@ package com.sampleExProject.DAOInventory;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.sampleExProject.DomainInventoryData.Film;
 
 public interface FilmRepository {

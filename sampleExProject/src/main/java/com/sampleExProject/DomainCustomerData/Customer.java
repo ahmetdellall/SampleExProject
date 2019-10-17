@@ -3,8 +3,23 @@ package com.sampleExProject.DomainCustomerData;
 import java.sql.Timestamp;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@Entity
+@Table(name = "customer")
+@XmlRootElement // kayıtların xml dönüşmesi icin justb anotasyonu
 public class Customer {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "customerSeq")
+	@SequenceGenerator(name = "customerSeq", sequenceName ="customer_seq")
 	private int customerID;
 	private String firstName;
 	private String lastName;
@@ -12,7 +27,10 @@ public class Customer {
 	private boolean active;
 	private Date dateTime;
 	private Timestamp lastUpdate;
+	
+	@OneToOne
 	private int addressId;
+	@OneToOne
 	private int storeId;
 
 	public int getCustomerID() {
