@@ -2387,3 +2387,8 @@ Verify the connector's configuration, identify and stop any process that's liste
 2019-10-17 15:43:56.819  INFO 13892 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2019-10-17 15:43:56.820  INFO 13892 --- [restartedMain] c.s.Application.SampleExProjectApp       : Started SampleExProjectApp in 0.99 seconds (JVM running for 1693.349)
 2019-10-17 15:43:56.825  INFO 13892 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-10-17 15:44:01.553  INFO 13892 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-17 15:44:01.556  INFO 13892 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-17 15:44:01.556 DEBUG 13892 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2019-10-17 15:44:01.561 DEBUG 13892 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-10-17 15:44:01.561  INFO 13892 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
